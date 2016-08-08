@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+  ~ Copyright (c) 2016. reserved.
+  ~ Prashant Pandey.
+  -->
+
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="w3-col l4 m6 s12 w3-margin-bottom"
+     ng-repeat="product in packages | filter:searchValue | filter:{category:'Adventure Tour Package'}:true | limitTo:3 ">
+    <div class="w3-card-16">
+        <div class="w3-row card-image-container">
+            <div class="col-xs-12"><img ng-src="img/{{product.img}}"></div>
+        </div>
+        <div class="card-title-box w3-row-padding">
+            <div class="w3-col"><span class="card-title">{{product.name}}</span><br/> <span
+                    class="card-sub-title">{{product.subtitle}}</span> <span class="card-category">{{product.category}}</span>
+            </div>
+        </div>
+        <div class="card-mid-content w3-row-padding">
+            <div class="w3-half w3-left-align"><img src="img/group.png"> <span>customizable tour</span>
+            </div>
+            <div class="w3-half w3-right-align"><span class="card-figure">{{product.night}}</span> <img
+                    src="img/night.png"> <span class="card-figure card-day">{{product.day}}</span> <img
+                    src="img/sun.png"></div>
+        </div>
+        <div class="card-content">
+            <div class="w3-row-padding">
+                <div class="w3-half w3-left-align"><img src="img/placeholder.png" class="img-24px"> <span
+                        class="card-trip-route">{{product.start}},{{product.end}}</span></div>
+                <div class="w3-half w3-center" ng-if="product.end"><span class="card-content-bottom">{{product.start}}</span>
+                    <img src="img/start-and-finish.png" class="img-32px"> <span class="card-content-upper">{{product.end}}</span>
+                </div>
+            </div>
+            <!--<div class="w3-row-padding w3-left-align" ng-show="product.boarding">-->
+            <!--<div class="w3-col"><img src="img/boarding-pass.png" class="img-24px"> &nbsp;&nbsp;<span-->
+            <!--class="card-boarding-destinations">from <i>Chandigarh</i> or <i>Delhi</i></span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="w3-row-padding w3-right-align">-->
+            <!--<div class="w3-col star-container"><p> Accommodation in <img src="img/star.png"> <img-->
+            <!--src="img/star.png"> or <img src="img/star.png"> <img src="img/star.png"> <img-->
+            <!--src="img/star.png"> Hotels and Motels </p></div>-->
+            <!--</div>-->
+            <div class="w3-tour-special w3-row-padding">
+                <div class="tour-block" ng-repeat="special in product.activities"><img
+                        ng-src="img/{{special.img}}" class="img-32px">
+
+                    <p>{{special.name}}</p></div>
+            </div>
+            <div class="w3-row-padding">
+                <div class="w3-third"><a href="#/product/{{product.id}}"
+                                         class="w3-btn w3-btn-block w3-blue w3-round">More</a></div>
+                <div class="w3-twothird costings"><p class="w3-center">₹ {{product.cost}}</p>
+
+                    <p class="w3-right-align">*Rate Per Person On Twin Sharing</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

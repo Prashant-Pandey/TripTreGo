@@ -1,0 +1,62 @@
+<header><a href="#/"><img src="img/triptrego.png" class="header-logo-img"></a></header><a href="#0" class="nav-trigger">Menu<span></span></a>
+<nav class="nav">
+    <ul>
+        <li><a href="#/">Home</a></li>
+        <li>
+            <div class="w3-dropdown-hover"><a class="w3-dropdown-btn" onclick="openDropDown('indianTourPackage')">Indian
+                Tour Packages</a>
+
+                <div class="w3-dropdown-content w3-card-4" id="indianTourPackage"><a href="#/tourpackage">Himachal Tour
+                    Packages</a> <a href="#/cmgsoon">J&K Tour Packages</a> <a href="#/cmgsoon">UttaraKhand Tour
+                    Packages</a> <a href="#/cmgsoon">South India Tour Packages</a> <a href="#/cmgsoon">Goa Tour
+                    Packages</a> <a href="#/cmgsoon">Rajasthan Tour Packages</a> <a href="#/cmgsoon">Special Tour
+                    Packages</a></div>
+            </div>
+        </li>
+        <li><a href="#/cmgsoon">International Tour Packages</a></li>
+        <li>
+            <div class="w3-dropdown-hover"><a class="w3-dropdown-btn" onclick="openDropDown('adventureTourPackage')">Adventure
+                Tour Packages</a>
+
+                <div class="w3-dropdown-content w3-card-4" id="adventureTourPackage"><a href="#/adventuretourpackage">Himachal
+                    Tour Packages</a> <a href="#/cmgsoon">J&K Tour Packages</a> <a href="#/cmgsoon">UttaraKhand Tour
+                    Packages</a></div>
+            </div>
+        </li>
+        <li>
+            <div class="w3-dropdown-hover"><a class="w3-dropdown-btn" onclick="openDropDown('bookings')">Bookings</a>
+
+                <div class="w3-dropdown-content w3-card-4" id="bookings"><a href="#/cmgsoon">Bus</a> <a
+                        href="#/cmgsoon">Flight</a> <a href="#/cmgsoon">Train</a> <a href="#/cmgsoon">Taxi</a></div>
+            </div>
+        </li>
+        <li><a href="#/cmgsoon">Hotels</a></li>
+        <li><a href="#/contact">Contact Us</a></li>
+        <li><a href="#/about">About Us</a></li>
+    </ul>
+</nav>
+<script>$(window).on('scroll', function () {
+    if (window.innerWidth >= 1000) {
+        fixNavOnScroll($('.nav'), 200);
+    }
+});
+$('.nav-trigger').on('click', function (event) {
+    event.preventDefault();
+    $(this).toggleClass('menu-is-open');
+    $('.nav').toggleClass('is-visible');
+});
+function openDropDown(id) {
+    document.getElementById(id).classList.toggle("w3-show");
+}
+    window.onclick = function (event) {
+        if (!event.target.matches('.w3-dropdown-btn'||window.innerWidth <= 1000)) {
+            var dropdowns = document.getElementsByClassName("w3-dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
